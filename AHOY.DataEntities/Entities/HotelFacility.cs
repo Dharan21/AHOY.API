@@ -10,10 +10,6 @@ namespace AHOY.DataEntities.Entities
 {
     public class HotelFacility
     {
-        public HotelFacility()
-        {
-            Hotels = Enumerable.Empty<Hotel>().ToArray();
-        }
         [Key]
         public int Id { get; set; }
         [Required]
@@ -26,6 +22,5 @@ namespace AHOY.DataEntities.Entities
         public Hotel? Hotel { get; set; }
         [ForeignKey("FacelityId")]
         public FacilityMaster? Facility { get; set; }
-        public ICollection<Hotel> Hotels { get; set; }
     }
 }
