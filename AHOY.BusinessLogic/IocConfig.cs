@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AHOY.BusinessLogic.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AHOY.BusinessLogic
 {
@@ -7,6 +8,7 @@ namespace AHOY.BusinessLogic
         public static void ConfigureServices(ref IServiceCollection services)
         {
             DataAccess.IocConfig.ConfigureServices(ref services);
+            services.AddTransient<IHotelManager, HotelManager>();
         }
     }
 }

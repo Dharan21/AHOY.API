@@ -6,21 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AHOY.DataEntities.Entities
+namespace AHOY.BusinessEntities
 {
-    public class HotelFacility
+    public class HotelFacilityViewModel
     {
-        [Key]
         public int Id { get; set; }
-        [Required]
-        [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        [Required]
-        [ForeignKey("Facility")]
         public int FacilityId { get; set; }
-        [ForeignKey("HotelId")]
-        public Hotel? Hotel { get; set; }
-        [ForeignKey("FacilityId")]
-        public FacilityMaster? Facility { get; set; }
+        public string FacilityName { get; set; } = string.Empty;
     }
 }

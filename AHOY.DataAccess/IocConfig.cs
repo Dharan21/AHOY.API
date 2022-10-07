@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AHOY.DataAccess.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AHOY.DataAccess
 {
@@ -7,6 +8,8 @@ namespace AHOY.DataAccess
         public static void ConfigureServices(ref IServiceCollection services)
         {
             Infrastructure.IocConfig.ConfigureServices(ref services);
+            services.AddTransient<IHotelRepositoty, HotelRepositoty>();
+            services.AddTransient<IFacilityRepository, FacilityRepository>();
         }
     }
 }

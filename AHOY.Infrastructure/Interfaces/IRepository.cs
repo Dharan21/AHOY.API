@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,8 @@ namespace AHOY.Infrastructure.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
+        DbSet<TEntity> GetDbSet { get; }
+
         Task<List<TEntity>> GetAll();
 
         Task<TEntity> GetById(int id);

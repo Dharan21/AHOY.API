@@ -12,8 +12,4 @@
     <ProjectReference Include="..\AHOY.Infrastructure\AHOY.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

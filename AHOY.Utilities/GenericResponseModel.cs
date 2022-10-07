@@ -9,5 +9,9 @@
         {
             Data = entity;
         }
+
+        public GenericResponseModel()
+        {
+        }
     }
 }
