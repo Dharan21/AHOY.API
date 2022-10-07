@@ -12,5 +12,6 @@ namespace AHOY.DataEntities.Entities
         [Key]
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
+        public ICollection<HotelFacility>? HotelFacilities { get; set; }
     }
 }

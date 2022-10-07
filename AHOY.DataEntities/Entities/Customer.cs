@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace AHOY.DataEntities.Entities
 {
-    public class Hotel
+    public class Customer
     {
         [Key]
         public int Id { get; set; }
-        public byte? Ratings { get; set; }
+        [MaxLength(150)]
+        public string Email { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         [MaxLength(500)]
         public string Address { get; set; } = string.Empty;
         [MaxLength(50)]
@@ -20,13 +22,6 @@ namespace AHOY.DataEntities.Entities
         public string State { get; set; } = string.Empty;
         [MaxLength(10)]
         public string Pincode { get; set; } = string.Empty;
-        [MaxLength(500)]
-        public string Description { get; set; } = string.Empty;
-        public bool IsRecomended { get; set; } = false;
-        public bool IsPopular { get; set; } = false;
-        public bool IsTopRated { get; set; } = false;
-        public ICollection<HotelImage>? HotelImages { get; set; }
-        public ICollection<HotelFacility>? HotelFacilities { get; set; }
-        public ICollection<HotelRoom>? HotelRooms { get; set; }
+        public ICollection<Booking>? Bookings { get; set; }
     }
 }

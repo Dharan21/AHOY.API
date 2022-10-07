@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 
 namespace AHOY.DataEntities.Entities
 {
-    public class HotelImage
+    public class HotelRoom
     {
         [Key]
         public int Id { get; set; }
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public string ImageUrl { get; set; } = string.Empty;
+        public int Quantity { get; set; } = 0;
+        public string Description { get; set; } = string.Empty;
+        public decimal PricePerDay { get; set; }
         [ForeignKey("HotelId")]
         public Hotel? Hotel { get; set; }
+        public ICollection<Booking>? Bookings { get; set; }
     }
 }
